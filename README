@@ -1,0 +1,19 @@
+#SURGEDEAMON
+
+this deamon is a super low level embedded software client(deamon) for the surge smart home operating system!
+This is designed and programmed by Randall Perkins!
+
+This is a personal project of mine, that i'm building for my personal smart home system.
+I'll post updates to my personal twitter @thetmrgate when i can, if you have questions.
+please feel free to message me on there!
+
+###Supported Platforms 
+- Ubuntu
+- Raspberry Pi
+- Freebsd (To come in the future)
+- Windows 10 (To come in the future)
+
+
+###Deps
+- clang
+- curl
