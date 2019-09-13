@@ -16,6 +16,7 @@ void dumpArgs(int argc, char *argv[])
 void cSpinLock()
 {
 	// Code 
+	// this might be system dep
 }
 
 void cSpinUnlock()
