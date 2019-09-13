@@ -36,7 +36,7 @@ void init_platform()
 	logger_init(gLogger);
 	
 	
-	writeLog(gLogger, LL_Info, "Surge Deamon v%i.%i.%i\n", APP_RELEASE, APP_MAJOR, APP_MINOR);
+	writeLog(gLogger, LL_Info, "Surge Deamon v%i.%i.%i", APP_RELEASE, APP_MAJOR, APP_MINOR);
 
 	
 	// Load Settings Config
@@ -70,8 +70,16 @@ int main(int argc, char *argv[])
 	
 	int curlSetup = setup_curl();
 	if(curlSetup == 0)
-		process_handshake(surgeServer, surgeUsername, surgePassword, handshakeToken);
-	
+	{
+		if(process_handshake(surgeServer, surgeUsername, surgePassword) == 0)
+		{
+			writeLog(gLogger, LL_Info, "Token : %s", handshakeToken);
+		}
+		else
+		{
+			writeLog(gLogger, LL_Error, "Failed to identify with Surge");
+		}
+	}
 	
 	exit_platform();
 	
