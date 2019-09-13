@@ -7,8 +7,7 @@
 
 #include "network/server.h"
 
-CURL *curlHandle;
-CURLcode res;
+extern CURL *curlHandle;
 
 int setup_curl()
 {
@@ -34,7 +33,9 @@ void exit_curl()
 
 void curl_test()
 {
-	curl_easy_setopt(curlHandle, CURLOPT_URL, "https://theaurc.com");
+	CURLcode res;
+	
+	curl_easy_setopt(curlHandle, CURLOPT_URL, "http://surgeBeta.theaurc.com/Devices/handshake");
 	curl_easy_setopt(curlHandle, CURLOPT_SSL_VERIFYPEER, 0L);
 	curl_easy_setopt(curlHandle, CURLOPT_SSL_VERIFYHOST, 0L);
 	
